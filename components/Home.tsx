@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
 import Svg, { Path } from "react-native-svg";
+import MapView from "react-native-maps";
 
 const Home = () => {
         return (
@@ -17,7 +18,17 @@ const Home = () => {
 
                 </View>
 
-                <View >
+                <View style={styles.mapBody}>  
+                    <MapView
+                        scrollEnabled={false}
+                        style={styles.map}
+                        initialRegion={{
+                            latitude: 37.78825,
+                            longitude: -122.4324,
+                            latitudeDelta: 0.0922,
+                            longitudeDelta: 0.0421,
+                          }}
+                    />
 
 
                 </View>
@@ -33,6 +44,7 @@ const styles = StyleSheet.create({
     headerText:{
         textAlign: 'center',
         fontSize:25,
+        width:'70%'
     },
     container:{
         flex:1,
@@ -41,12 +53,23 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
     },
     header:{
-        height: 200,
+        height: 170,
         width: '100%',
         // flex:1,
         justifyContent: 'space-evenly',
         alignItems: 'center',
         flexDirection:'row',
+    },
+    mapBody:{
+        flex:1,
+        height: '25%',
+        width: '90%',
+    }
+    ,
+    map:{
+        width: '100%',
+        height: '25%',
+
     }
   });
 
