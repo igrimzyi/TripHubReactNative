@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Local imports
-import Home from './components/home/Home';
+import Home from './components/Home';
 import Navigation from './components/Navigation';
 import Selector from './components/Selector';
 

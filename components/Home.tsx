@@ -16,6 +16,11 @@ const Home = () => {
                     </Svg>
 
                 </View>
+
+                <View >
+
+
+                </View>
                 
             </View>
         );
@@ -30,14 +35,16 @@ const styles = StyleSheet.create({
         fontSize:25,
     },
     container:{
-        flex:5,
+        flex:1,
+        height: '100%',
         alignItems: 'center',
         // justifyContent: 'center',
     },
     header:{
-
-        flex:1,
-        // justifyContent: 'center',
+        height: 200,
+        width: '100%',
+        // flex:1,
+        justifyContent: 'space-evenly',
         alignItems: 'center',
         flexDirection:'row',
     }
