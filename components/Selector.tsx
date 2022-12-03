@@ -1,12 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
+import Svg, { Path } from "react-native-svg";
+
+
 
 const Selector = () => {
         return (
-            <View>
-                <Text>This would be selector</Text>
-            </View>
+                <View></View>
         );
 };
+
 
 export default Selector;
