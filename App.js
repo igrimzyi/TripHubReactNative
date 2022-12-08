@@ -10,17 +10,27 @@ import Navigation from './components/Navigation';
 import Selector from './components/Selector';
 
 import Profile from './assets/profile.svg';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-      
-    <View style={styles.container}>
+    <NavigationContainer>
+    <SafeAreaView style={styles.container}>
+      <Stack.Navigator style={styles.navigator}>
 
-        <Home/>
-      
-    </View>
+      <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerShown:false,
+          }}
+        />
+      </Stack.Navigator>
+        
+    </SafeAreaView>
+    </NavigationContainer>
   );
 }
 
@@ -30,4 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
 
   },
+  navigator:{
+    display:'none'
+  }
 });

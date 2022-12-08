@@ -2,10 +2,11 @@ import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
 import Svg, { Path } from "react-native-svg";
 import MapView from "react-native-maps";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Home = () => {
         return (
-            <View style={styles.container} >
+            <SafeAreaView style={styles.container} >
 
                 <View style={styles.header}>
 
@@ -19,6 +20,7 @@ const Home = () => {
                 </View>
 
                 <View style={styles.mapBody}>  
+                    <Text style={{textAlign:'center'}}>View Spots Around You!</Text>
                     <MapView
                         scrollEnabled={false}
                         style={styles.map}
@@ -29,11 +31,13 @@ const Home = () => {
                             longitudeDelta: 0.0421,
                           }}
                     />
+                </View>
 
-
+                <View style={styles.socialTab}>
+                    <Text>See Where Your friends Have been!</Text>
                 </View>
                 
-            </View>
+            </SafeAreaView>
         );
 };
 
@@ -50,9 +54,12 @@ const styles = StyleSheet.create({
         flex:1,
         height: '100%',
         alignItems: 'center',
+        backgroundColor:'white'
         // justifyContent: 'center',
+
     },
     header:{
+        flex:.5,
         height: 170,
         width: '100%',
         // flex:1,
@@ -62,14 +69,17 @@ const styles = StyleSheet.create({
     },
     mapBody:{
         flex:1,
+        justifyContent:'space-evenly',
         height: '25%',
         width: '90%',
     }
     ,
     map:{
         width: '100%',
-        height: '25%',
-
+        height: '60%',
+    }, 
+    socialTab:{
+        flex:1,
     }
   });
 
