@@ -8,8 +8,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
 import Selector from './components/Selector';
+import Profile from './components/Profile';
 
-import Profile from './assets/profile.svg';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
@@ -27,6 +27,16 @@ export default function App() {
             headerShown:false,
           }}
         />
+
+      <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            headerShown:false,
+          }}
+        />
+
+
       </Stack.Navigator>
         
     </SafeAreaView>
