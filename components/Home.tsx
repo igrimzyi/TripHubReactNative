@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useEffect,useState} from "react";
 import { StyleSheet, Text, View } from 'react-native';
 import Svg, { Path } from "react-native-svg";
 import MapView from "react-native-maps";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Home = ({navigation}: {navigation: any}) => {
+
+
+
         return (
             <SafeAreaView style={styles.container} >
 
@@ -20,7 +23,7 @@ const Home = ({navigation}: {navigation: any}) => {
                 </View>
 
                 <View style={styles.mapBody}>  
-                    <Text style={{textAlign:'center'}}>View Spots Around You!</Text>
+                    <Text style={styles.mapText}>Take a look around your area!</Text>
                     <MapView
                         scrollEnabled={false}
                         style={styles.map}
@@ -59,8 +62,8 @@ const styles = StyleSheet.create({
 
     },
     header:{
-        flex:.5,
-        height: 170,
+        // flex:,   l
+        // height: 100,
         width: '100%',
         // flex:1,
         justifyContent: 'space-evenly',
@@ -80,6 +83,10 @@ const styles = StyleSheet.create({
     }, 
     socialTab:{
         flex:1,
+    }, 
+    mapText:{
+        textAlign:"center", 
+        fontSize:25
     }
   });
 
