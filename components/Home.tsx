@@ -3,9 +3,20 @@ import { StyleSheet, Text, View } from 'react-native';
 import Svg, { Path } from "react-native-svg";
 import MapView from "react-native-maps";
 import { SafeAreaView } from "react-native-safe-area-context";
+import friendsList from './friends.json'; 
+
 
 const Home = ({navigation}: {navigation: any}) => {
 
+        const [friends, setFriends] = useState(friendsList?.friends); 
+
+
+        useEffect(() => {
+
+            
+            
+
+        }, []);
 
 
         return (
@@ -26,6 +37,7 @@ const Home = ({navigation}: {navigation: any}) => {
                     <Text style={styles.mapText}>Take a look around your area!</Text>
                     <MapView
                         scrollEnabled={false}
+                        zoomEnabled={false}
                         style={styles.map}
                         initialRegion={{
                             latitude: 37.78825,
@@ -38,6 +50,21 @@ const Home = ({navigation}: {navigation: any}) => {
 
                 <View style={styles.socialTab}>
                     <Text>See Where Your friends Have been!</Text>
+
+                    <View>
+                        
+                        {
+                            friends?.map((friend: any, key) => {
+                                return (
+                                    <View style={styles.friendBar} key={key}>
+                                        <Text>{friend.name}</Text>
+                                        <Text>{friend.recentLocation}</Text>
+                                    </View>
+                                )
+                            })
+                        }    
+
+                    </View>
                 </View>
                 
             </SafeAreaView>
@@ -83,10 +110,20 @@ const styles = StyleSheet.create({
     }, 
     socialTab:{
         flex:1,
+        width: '90%',
+        display:'flex',
+        alignItems:'stretch',
     }, 
     mapText:{
         textAlign:"center", 
         fontSize:25
+    },
+    friendBar:{
+        backgroundColor:'white',
+        padding:10,
+        maxWidth:'90%',
+        width:'90%',
+        alignSelf:'center',
     }
   });
 

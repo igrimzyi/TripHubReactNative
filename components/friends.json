@@ -1,0 +1,22 @@
+{
+    "friends":[
+        {
+            "name":"Jordan", 
+            "recentLocation":"San Francisco",
+            "profileData":"url"
+        },
+        {
+            "name":"Nathan", 
+            "recentLocation":"San Francisco",
+            "profileData":"url"
+        }
+        ,
+        {
+            "name":"Jamie",
+            "recentLocation":"San Francisco",
+            "profileData":"url"
+
+        }
+
+    ]
+}
