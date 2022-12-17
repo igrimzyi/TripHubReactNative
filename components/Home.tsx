@@ -57,8 +57,11 @@ const Home = ({navigation}: {navigation: any}) => {
                             friends?.map((friend: any, key) => {
                                 return (
                                     <View style={styles.friendBar} key={key}>
-                                        <Text>{friend.name}</Text>
-                                        <Text>{friend.recentLocation}</Text>
+                                        
+                                        <View>
+                                            <Text>{friend.name}</Text>
+                                            <Text>{friend.recentLocation}</Text>
+                                        </View>
                                     </View>
                                 )
                             })
