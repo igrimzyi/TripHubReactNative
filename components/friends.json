@@ -2,12 +2,12 @@
     "friends":[
         {
             "name":"Jordan", 
-            "recentLocation":"San Francisco",
+            "recentLocation":"Lytle Creek",
             "profileData":"url"
         },
         {
             "name":"Nathan", 
-            "recentLocation":"San Francisco",
+            "recentLocation":"Rocker Pub",
             "profileData":"url"
         }
         ,

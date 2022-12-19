@@ -57,7 +57,9 @@ const Home = ({navigation}: {navigation: any}) => {
                             friends?.map((friend: any, key) => {
                                 return (
                                     <View style={styles.friendBar} key={key}>
-
+                                        <Text style={styles.locType}>
+                                        🌲 
+                                        </Text>
                                         <View style={styles.friendContent}>
                                             <View>
                                                 <Text style={styles.friendName}>{friend.name}</Text>
@@ -132,12 +134,17 @@ const styles = StyleSheet.create({
         maxWidth:'90%',
         width:'90%',
         alignSelf:'center',
+        flexDirection:'row',
+        alignContent:'center',
+        justifyContent:'space-between',
     },
     friendName:{
+        fontSize:20,
         fontWeight:'700',
     },
     locationText:{
-        color:'#C4C4C4'
+        color:'#C4C4C4',
+        fontSize:15,
     },
     friendContent:{
         display:'flex',
@@ -145,6 +152,9 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
         width:'80%',
         // backgroundColor:'red'
+    },
+    locType:{
+        fontSize:40,
     }
   });
 
