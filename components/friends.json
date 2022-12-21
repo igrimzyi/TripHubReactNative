@@ -3,18 +3,21 @@
         {
             "name":"Jordan", 
             "recentLocation":"Lytle Creek",
-            "profileData":"url"
+            "profileData":"🌲",
+            "type":"🌲"
         },
         {
             "name":"Nathan", 
             "recentLocation":"Rocker Pub",
-            "profileData":"url"
+            "profileData":"url",
+            "type":"🍺"
         }
         ,
         {
             "name":"Jamie",
-            "recentLocation":"San Francisco",
-            "profileData":"url"
+            "recentLocation":"Ultra Brew",
+            "profileData":"url",
+            "type":"☕️"
 
         }
 

@@ -22,16 +22,7 @@ const Home = ({navigation}: {navigation: any}) => {
         return (
             <SafeAreaView style={styles.container} >
 
-                <View style={styles.header}>
 
-                    <Text style={styles.headerText}>WELCOME BACK, ISAIAH!</Text>
-                        
-                    <Svg onPress={() => navigation.navigate('Profile')} style={styles.profileIcon} width={60} height={60} viewBox="0 0 128 128" fill="none">
-                            <Path d="M30 49C30 67.7 45.3 83 64 83C82.7 83 98 67.7 98 49C98 30.3 82.7 15 64 15C45.3 15 30 30.3 30 49ZM90 49C90 63.3 78.3 75 64 75C49.7 75 38 63.3 38 49C38 34.7 49.7 23 64 23C78.3 23 90 34.7 90 49Z" fill="black"/>
-                            <Path d="M24.4 119.4C35 108.8 49 103 64 103C79 103 92.9999 108.8 103.6 119.4L109.3 113.7C97.2 101.7 81.1 95 64 95C46.9 95 30.8 101.7 18.7 113.7L24.4 119.4Z" fill="black"/>
-                    </Svg>
-
-                </View>
 
                 <View style={styles.mapBody}>  
                     <Text style={styles.mapText}>Take a look around your area!</Text>
@@ -40,25 +31,25 @@ const Home = ({navigation}: {navigation: any}) => {
                         zoomEnabled={false}
                         style={styles.map}
                         initialRegion={{
-                            latitude: 37.78825,
-                            longitude: -122.4324,
-                            latitudeDelta: 0.0922,
-                            longitudeDelta: 0.0421,
+                            latitude: 34.073620,
+                            longitude: -118.400352,
+                            latitudeDelta: 0.0592,
+                            longitudeDelta: 0.00421,
                           }}
                     />
                 </View>
 
                 <View style={styles.socialTab}>
-                    <Text>See Where Your friends Have been!</Text>
+                    <Text style={styles.socialText}>See Where Your friends Have Been!</Text>
 
-                    <View>
+                    <View style={styles.friendGroup}>
                         
                         {
                             friends?.map((friend: any, key) => {
                                 return (
                                     <View style={styles.friendBar} key={key}>
                                         <Text style={styles.locType}>
-                                        🌲 
+                                        {friend.type}
                                         </Text>
                                         <View style={styles.friendContent}>
                                             <View>
@@ -75,6 +66,29 @@ const Home = ({navigation}: {navigation: any}) => {
                         }    
 
                     </View>
+
+                    <Text style={styles.viewMore}>View More</Text>
+
+                </View>
+
+
+                <View style={styles.header}>
+
+                    {/* <Text style={styles.headerText}>WELCOME BACK, ISAIAH!</Text> */}
+
+                    <Svg  height={50} viewBox="0 0 24 24" width={50} >
+                        <Path fill='black' d="M12,3c0,0-6.186,5.34-9.643,8.232C2.154,11.416,2,11.684,2,12c0,0.553,0.447,1,1,1h2v7c0,0.553,0.447,1,1,1h3  c0.553,0,1-0.448,1-1v-4h4v4c0,0.552,0.447,1,1,1h3c0.553,0,1-0.447,1-1v-7h2c0.553,0,1-0.447,1-1c0-0.316-0.154-0.584-0.383-0.768  C18.184,8.34,12,3,12,3z"/>
+                    </Svg>
+                    <Svg height={32}  viewBox="0 0 32 32" width={32} >
+                    <Path fill='black' d="M28,14H18V4c0-1.104-0.896-2-2-2s-2,0.896-2,2v10H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h10v10c0,1.104,0.896,2,2,2  s2-0.896,2-2V18h10c1.104,0,2-0.896,2-2S29.104,14,28,14z"/></Svg>
+
+                        
+                    <Svg onPress={() => navigation.navigate('Profile')} style={styles.profileIcon} width={50} height={50} viewBox="0 0 128 128" fill="none">
+                            <Path d="M30 49C30 67.7 45.3 83 64 83C82.7 83 98 67.7 98 49C98 30.3 82.7 15 64 15C45.3 15 30 30.3 30 49ZM90 49C90 63.3 78.3 75 64 75C49.7 75 38 63.3 38 49C38 34.7 49.7 23 64 23C78.3 23 90 34.7 90 49Z" fill="black"/>
+                            <Path d="M24.4 119.4C35 108.8 49 103 64 103C79 103 92.9999 108.8 103.6 119.4L109.3 113.7C97.2 101.7 81.1 95 64 95C46.9 95 30.8 101.7 18.7 113.7L24.4 119.4Z" fill="black"/>
+                    </Svg>
+                    
+
                 </View>
                 
             </SafeAreaView>
@@ -82,6 +96,7 @@ const Home = ({navigation}: {navigation: any}) => {
 };
 
 const styles = StyleSheet.create({
+    
     profileIcon:{
         width: 60,
     },
@@ -106,6 +121,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         alignItems: 'center',
         flexDirection:'row',
+        borderTopColor:'black',
+        borderTopWidth:.2,
+        padding:10,
     },
     mapBody:{
         flex:1,
@@ -155,6 +173,20 @@ const styles = StyleSheet.create({
     },
     locType:{
         fontSize:40,
+    },
+    friendGroup:{
+        marginTop:20,
+    },
+    socialText:{
+        textAlign:'center',
+        fontSize:25
+
+    },
+    viewMore:{
+        textAlign:'center',
+        fontSize:20,
+        marginTop:15,
+        color:'#C4C4C4'
     }
   });
 
