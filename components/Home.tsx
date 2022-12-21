@@ -169,6 +169,9 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-between',
         width:'80%',
+        borderBottomColor:'#C4C4C4',
+        borderBottomWidth:.2,
+        paddingBottom:10,
         // backgroundColor:'red'
     },
     locType:{
