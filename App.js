@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Navigation from './components/Navigation';
 import Selector from './components/Selector';
 import Profile from './components/Profile';
+import Location from './components/Location';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -34,6 +35,14 @@ export default function App() {
           options={{
             headerShown:false,
           }}
+        />
+
+        <Stack.Screen
+            name="Location"
+            component={Location}
+            options={{
+                headerShown:false
+            }}
         />
 
 

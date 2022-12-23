@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,TouchableOpacity } from 'react-native';
 import Svg, { Path } from "react-native-svg";
 import MapView from "react-native-maps";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -22,8 +22,6 @@ const Home = ({navigation}: {navigation: any}) => {
         return (
             <SafeAreaView style={styles.container} >
 
-
-
                 <View style={styles.mapBody}>  
                     <Text style={styles.mapText}>Take a look around your area!</Text>
                     <MapView
@@ -40,14 +38,15 @@ const Home = ({navigation}: {navigation: any}) => {
                 </View>
 
                 <View style={styles.socialTab}>
-                    <Text style={styles.socialText}>See Where Your friends Have Been!</Text>
+                    <Text style={styles.socialText}>See Where Your Friends Have Been!</Text>
 
                     <View style={styles.friendGroup}>
                         
                         {
                             friends?.map((friend: any, key) => {
                                 return (
-                                    <View style={styles.friendBar} key={key}>
+                                <TouchableOpacity onPress={()=>{navigation.navigate('Location')}} key={key}>
+                                    <View style={styles.friendBar}>
                                         <Text style={styles.locType}>
                                         {friend.type}
                                         </Text>
@@ -61,13 +60,14 @@ const Home = ({navigation}: {navigation: any}) => {
                                             </Svg>
                                         </View>
                                     </View>
+                                </TouchableOpacity>
                                 )
                             })
                         }    
 
                     </View>
 
-                    <Text style={styles.viewMore}>View More</Text>
+                    {/* <Text style={styles.viewMore}>View More</Text> */}
 
                 </View>
 
@@ -82,11 +82,12 @@ const Home = ({navigation}: {navigation: any}) => {
                     <Svg height={32}  viewBox="0 0 32 32" width={32} >
                     <Path fill='black' d="M28,14H18V4c0-1.104-0.896-2-2-2s-2,0.896-2,2v10H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h10v10c0,1.104,0.896,2,2,2  s2-0.896,2-2V18h10c1.104,0,2-0.896,2-2S29.104,14,28,14z"/></Svg>
 
-                        
-                    <Svg onPress={() => navigation.navigate('Profile')} style={styles.profileIcon} width={50} height={50} viewBox="0 0 128 128" fill="none">
-                            <Path d="M30 49C30 67.7 45.3 83 64 83C82.7 83 98 67.7 98 49C98 30.3 82.7 15 64 15C45.3 15 30 30.3 30 49ZM90 49C90 63.3 78.3 75 64 75C49.7 75 38 63.3 38 49C38 34.7 49.7 23 64 23C78.3 23 90 34.7 90 49Z" fill="black"/>
-                            <Path d="M24.4 119.4C35 108.8 49 103 64 103C79 103 92.9999 108.8 103.6 119.4L109.3 113.7C97.2 101.7 81.1 95 64 95C46.9 95 30.8 101.7 18.7 113.7L24.4 119.4Z" fill="black"/>
-                    </Svg>
+                    <TouchableOpacity onPress={() => navigation.navigate('Profile')} > 
+                        <Svg onPress={() => navigation.navigate('Profile')} style={styles.profileIcon} width={50} height={50} viewBox="0 0 128 128" fill="none">
+                                <Path d="M30 49C30 67.7 45.3 83 64 83C82.7 83 98 67.7 98 49C98 30.3 82.7 15 64 15C45.3 15 30 30.3 30 49ZM90 49C90 63.3 78.3 75 64 75C49.7 75 38 63.3 38 49C38 34.7 49.7 23 64 23C78.3 23 90 34.7 90 49Z" fill="black"/>
+                                <Path d="M24.4 119.4C35 108.8 49 103 64 103C79 103 92.9999 108.8 103.6 119.4L109.3 113.7C97.2 101.7 81.1 95 64 95C46.9 95 30.8 101.7 18.7 113.7L24.4 119.4Z" fill="black"/>
+                        </Svg>
+                    </TouchableOpacity>
                     
 
                 </View>
