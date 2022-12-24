@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         position: 'relative',
         height  : '100%',
         width: '100%',
-        bottom: 70,
+        bottom: 80,
         alignItems: 'center',
     },
     mainTitle:{
@@ -69,7 +69,7 @@ const Location = ({navigation}: {navigation: any}) => {
             </View>
 
             <View style={{height:'80%'}}>
-                <Text>Location</Text>
+                <Text>About</Text>
 
 
             </View>
