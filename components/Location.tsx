@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text,  StyleSheet, Image } from 'react-native';
+import { View, Text,  StyleSheet, Image, Button } from 'react-native';
 import MapView from "react-native-maps";
 
 
@@ -40,6 +40,20 @@ const styles = StyleSheet.create({
     }, 
     topContent:{
         height:'30%'
+    },
+    aboutSection:{
+        // height:'10%',
+        alignItems:'center',
+    },
+    aboutTextBody:{
+        width:'90%',
+        textAlign:'center', 
+        borderColor:'black',
+        borderBottomWidth: .2,
+        paddingBottom: 10,
+    },
+    aboutText:{
+        textAlign:'center', 
     }
 });
 
@@ -68,8 +82,12 @@ const Location = ({navigation}: {navigation: any}) => {
 
             </View>
 
-            <View style={{height:'80%'}}>
-                <Text>About</Text>
+            <View style={styles.aboutSection}>
+                <View style={styles.aboutTextBody}>
+                    <Text  style={styles.aboutText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac pretium felis. Sed auctor volutpat justo nec vulputate. Vestibulum commodo facilisis leo eu lacinia. Duis quis nulla fermentum nisi pretium luctus. Curabitur nec egestas nulla. Proin aliquam sagittis nisi vel rhoncus. Etiam vestibulum, justo non aliquam facilisis.</Text>
+
+        
+                </View>
 
 
             </View>
