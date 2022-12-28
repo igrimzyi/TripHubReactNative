@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     },
     aboutTextBody:{
         width:'90%',
+        height:'40%',
         textAlign:'center', 
         borderColor:'black',
         borderBottomWidth: .2,
@@ -54,6 +55,13 @@ const styles = StyleSheet.create({
     },
     aboutText:{
         textAlign:'center', 
+        height:'50%',
+        overflow:'hidden',
+        width:'100%',
+    
+    },
+    viewMore:{
+        color:'black',
     }
 });
 
@@ -84,9 +92,12 @@ const Location = ({navigation}: {navigation: any}) => {
 
             <View style={styles.aboutSection}>
                 <View style={styles.aboutTextBody}>
-                    <Text  style={styles.aboutText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac pretium felis. Sed auctor volutpat justo nec vulputate. Vestibulum commodo facilisis leo eu lacinia. Duis quis nulla fermentum nisi pretium luctus. Curabitur nec egestas nulla. Proin aliquam sagittis nisi vel rhoncus. Etiam vestibulum, justo non aliquam facilisis.</Text>
+                    <Text style={styles.aboutText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac pretium felis. Sed auctor volutpat justo nec vulputate. Vestibulum commodo facilisis leo eu lacinia. Duis quis nulla fermentum nisi pretium luctus. Curabitur nec egestas nulla. Proin aliquam sagittis nisi vel rhoncus. Etiam vestibulum, justo non aliquam facilisis.</Text>
 
-        
+                    <Button 
+                    title='View More'
+                    color={'black'}
+                    />
                 </View>
 
 
