@@ -7,7 +7,7 @@ import Svg, { Path } from "react-native-svg";
 const Selector = () => {
         return (
                 <View>
-                        <Text>I have been working on LeetCode lol</Text>
+                        <Text>I have been working on LeetCode lol still</Text>
                         
                 </View>
         );
